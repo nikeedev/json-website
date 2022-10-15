@@ -1,16 +1,42 @@
 
-var json_here = document.getElementById("json_here");
-
-var jsona = "";
 
 
-fetch('src/info.json')
-.then(response => {
-   return response.text();
+
+var json_here = document.querySelector("#json_here");
+
+var json_text;
+
+
+let jsonen = fetch('./src/info.json')
+.then(Response => Response)
+.then(Response => {
+   return Response.json();
 })
-.then(output => jsona = JSON.parse(output));
 
+jsonen.then(result => {
 
-json_here.value = Object.keys(jsona).length; 
+   //console.log(result)
 
+   let json_array = Object.entries(result);
+   
+   /*
+   for (let i=0; i < json_array.length; i++) {
+      for (let j = 0; j < json_array.length; j++) {
+         console.log(Object.entries(json_array[i][j]))
+         console.log(Object.entries(json_array[i]))
+      }
+      
+   }
+   */
+
+   console.log(json_array);
+
+   json_text = JSON.stringify(result);
+   
+   var text = JSON.stringify(result);
+   
+   
+   json_here.innerHTML = text;
+   
+});
 

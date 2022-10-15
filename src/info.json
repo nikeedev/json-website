@@ -3,5 +3,10 @@
         "name": "Carl",
         "age": 24,
         "fav_color": "Marine blue"
+    },
+    "person2": {
+        "name": "Carl2",
+        "age": 24.00001,
+        "fav_color": "Marine cyan blue"
     }
 }
